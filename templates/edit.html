@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Patient</title>
+</head>
+<body>
+
+<h1>Edit Patient</h1>
+
+<form method="POST">
+
+    <input
+        type="text"
+        name="name"
+        value="{{ patient[1] }}"
+        required
+    >
+
+    <br><br>
+
+     <select name="department" required>
+    <option value="General" {% if patient[2] == "General" %}selected{% endif %}>
+        General
+    </option>
+
+    <option value="Emergency" {% if patient[2] == "Emergency" %}selected{% endif %}>
+        Emergency
+    </option>
+
+    <option value="Maternity" {% if patient[2] == "Maternity" %}selected{% endif %}>
+        Maternity
+    </option>
+
+    <option value="Dental" {% if patient[2] == "Dental" %}selected{% endif %}>
+        Dental
+    </option>
+</select>
+
+    <br><br>
+
+    <button type="submit">
+        Save Changes
+    </button>
+
+</form>
+
+</body>
+</html>
